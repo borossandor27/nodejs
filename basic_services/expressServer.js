@@ -22,7 +22,7 @@ var server = app.listen(8081, function () {
 });
 
 app.get("/", function (req, res) {
-  res.status(200).send(__dirname+"/"+"index.html");
+  res.status(200).send(__dirname+"\\"+"public\index.html");
 });
 
 //-- kezdő oldal
@@ -35,6 +35,9 @@ app.post("/process_post", urlencodedParser, function(req, res){
     first_name:req.body.first_name,
     last_name:req.body.last_name
  };
+  res.set({
+    "content-type": "application/json",
+  });
  console.log(response);
  res.write(JSON.stringify(response));
  res.end();
@@ -48,7 +51,8 @@ app.get("/process_get", function (req, res) {
   res.set({
     "content-type": "application/json",
   });
-  res.write(JSON.stringify(response))
+  res.write(JSON.stringify(response));
+  res.write(__dirname);
   res.end();
 });
 
