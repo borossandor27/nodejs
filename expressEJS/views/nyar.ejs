@@ -11,7 +11,7 @@
 
 <body>
     <h1>Nyár</h1>
-    <h3><%= title %></h3>
+    <h3><%= (typeof title != "undefined" ? title : "") %></h3>
     <img src="./images/cat.png" title="Cica" alt="Cica" style="float:left; height:30vh; width:auto;"  />
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio libero velit non nesciunt omnis cumque quibusdam,
         neque facilis consectetur, vitae aliquid rem laborum quo officiis sed! Placeat autem sit nam.</p>
