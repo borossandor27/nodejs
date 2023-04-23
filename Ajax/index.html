@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax fetch API</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="./ajax.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="blank">Using the
+                Fetch API</a>
+        </h1>
+        <section>
+            <h2></h2>
+            <p>A Fetch egy böngésző API szövegek, képek, strukturált adatok aszinkron betöltésére a HTML-oldalak
+                frissítéséhez. Abban tér el a már megismert <def>XMLHttpRequest</def>-től, hogy a Promise objektumra
+                épül, ami nagymértékben leegyszerűsíti a kódot, különösen, ha az async/await funkcióval együtt
+                használjuk.</p>
+        </section>
+        <section>
+            <img id="nekoImage" src="https://nekos.best/api/v2/neko/0218.png" alt="Random kép a neko-ról"
+                title="Random kép a neko-ról">
+            <button id="kepcsere">Új kép</button>
+        </section>
+    </header>
+    <script src="./nekos-image.js"></script>
+</body>
+
+</html>
