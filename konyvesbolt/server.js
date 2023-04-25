@@ -3,8 +3,8 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded());
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 const mysql = require('mysql')
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -13,18 +13,21 @@ const connection = mysql.createConnection({
   database: 'konyvesbolt2'
 })
 connection.connect();
-app.post('/create', (req,res) => {
+app.get('/vasarlo/read/:vasarloid', (req, res) => { });
+app.get('/vasarlo/read', (req, res) => {
+  connection.query('SELECT * FROM `vasarlo`;', (err, rows, fields) => {
+    if (err) throw err
+    console.log('The solution is: ', rows[0].nev);
+  })
+});
+app.post('/vasarlo/create', (req, res) => {
 
 })
+app.delete('/vasarlo/delete', (req, res) => { });
+app.put('/vasarlo/update', (req, res) => { });
 
-
-connection.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
-  if (err) throw err
-
-  console.log('The solution is: ', rows[0].solution)
-})
 
 
 app.listen(3000, () => {
-    console.log('Connect 3000 port');
+  console.log('Lissen 3000 port');
 })
